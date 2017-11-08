@@ -1,205 +1,403 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<title>Shower Presentation Engine</title>
-	<meta charset="utf-8">
-	<meta http-equiv="x-ua-compatible" content="ie=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="shower/themes/ribbon/styles/screen-16x10.css">
-</head>
-<body class="shower list">
+  <head>
+    <title>Programación segura en block chain</title>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="shower/themes/ribbon/styles/screen-16x10.css">
+  </head>
+  <body class="shower list">
+    <header class="caption">
+      <h1>Programación segura</h1>
+      <p>Rudy Godoy, V.bz</p>
+    </header>
 
-	<header class="caption">
-		<h1>Shower Presentation Engine</h1>
-		<p>Yours Truly, Famous Inc.</p>
-	</header>
+    <section class="slide" id="cover">
+      <h2>Programación segura</h2>
+      <p>Presentado por <a href="http://rudygodoy.com">Rudy Godoy</a></p>
+      <figure>
+        <img class="cover" src="pictures/cover.jpg" alt="Hands on the orange typewriter in a park">
+        <figcaption class="white">
+	  <a href="http://fiftyfootshadows.net/">© John Carey</a>
+        </figcaption>
+      </figure>
+      <style>
+        #cover h2 {
+        margin:20px 0 0;
+        color:#FFF;
+        text-align:center;
+        font-size:70px;
+        }
+        #cover p {
+        margin:10px 0 0;
+        text-align:center;
+        color:#FFF;
+        font-style:italic;
+        font-size:20px;
+        }
+        #cover p a {
+        color:#FFF;
+        }
+      </style>
+    </section>
 
-	<section class="slide" id="cover">
-		<h2>Shower Presentation Engine</h2>
-		<p>Brought to you by <a href="http://pepelsbey.net">Vadim Makeev</a></p>
-		<figure>
-			<img class="cover" src="pictures/cover.jpg" alt="Hands on the orange typewriter in a park">
-			<figcaption class="white">
-				<a href="http://fiftyfootshadows.net/">© John Carey</a>
-			</figcaption>
-		</figure>
-		<style>
-			#cover h2 {
-				margin:30px 0 0;
-				color:#FFF;
-				text-align:center;
-				font-size:70px;
-				}
-			#cover p {
-				margin:10px 0 0;
-				text-align:center;
-				color:#FFF;
-				font-style:italic;
-				font-size:20px;
-				}
-				#cover p a {
-					color:#FFF;
-					}
-		</style>
-	</section>
+    <section class="slide">
+      <h2 class="shout shrink">Contexto</h2>
+    </section>
+    
+    <section class="slide">
+      <figure>
+	<img class="cover" src="pictures/eth-env.png" alt="ETH env.">
+	<figcaption class="white">
+	  <a href="http://rudygodoy.com/">© Rudy Godoy</a>
+	</figcaption>
+      </figure>
+    </section>
 
-	<section class="slide">
-		<h2>Shower key features</h2>
-		<ol>
-			<li>Built on HTML, CSS and vanilla JavaScript</li>
-			<li>Works in all modern browsers</li>
-			<li>Themes are separated from engine</li>
-			<li>Modular and extensible</li>
-			<li>Fully keyboard accessible</li>
-			<li>Printable to PDF</li>
-		</ol>
-		<p class="note">Shower ['ʃəuə] noun. A person or thing that shows.</p>
-	</section>
+    <section class="slide">
+      <h2>Programas</h2>
+      <ol>
+	<li><mark>Escritos</mark> en lenguajes Solidity, LLL, Rust, o 
+	  Serpent (Alto nivel)</li>
+	<li class="next"><mark>Compilados</mark> a lenguaje EVM
+	(bajo nivel)</li>
+	<li class="next">Se publican a través de una <mark>transacción</mark></li>
+        <li class="next">Permanencen <mark>inmutables</mark></li>
+        <li class="next">Disponibles a través de dirección (simil a
+          billetera)</li>
+        <li class="next">Código implementado <mark>accesible</mark> y visible</li>
+        <li class="next">EVM <mark>Turing completo</mark> (gas / problema de parada)</li>
+      </ol>
+    </section>
 
-	<section class="slide">
-		<h2>Plain text on your slides</h2>
-		<p>Lorem ipsum dolor sit amet, consectetur <a href="#4">adipisicing</a> elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, <em>quis nostrud</em> exercitation ullamco laboris <strong>nisi ut aliquip</strong> ex ea commodo consequat. Duis aute irure <i>dolor</i> in reprehenderit in voluptate velit esse cillum <b>dolore</b> eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in <code>&lt;culpa&gt;</code> qui officia deserunt mollit anim id est laborum.</p>
-	</section>
+    <section class="slide">
+      <figure>
+	<img class="cover" src="pictures/evm.png" alt="EVM">
+	<figcaption class="white">
+	  <a href="http://rudygodoy.com/">© Rudy Godoy</a>
+	</figcaption>
+      </figure>
+    </section>
 
-	<section class="slide">
-		<h2>Two columns if you like</h2>
-		<p class="double">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.</p>
-	</section>
+    <section class="slide">
+      <h2>Riesgo</h2>
+      <figure>
+	<blockquote>
+	  <p>Cada año muere más gente asesinada por cerdos que por
+	  tiburones, lo que demuestra cuan buenos somos evaluando
+	  el riesgo.</p>
+	</blockquote>
+	<figcaption>Bruce Schneier</figcaption>
+      </figure>
+      <figure>
+	<blockquote>
+	  <p>Si crees que la tecnología puede resolver los problemas
+	  de seguridad, entonces no entiendes los problemas y tampoco
+	    la tecnología.</p>
+        </blockquote>
+	<figcaption>Bruce Schneier</figcaption>
+      </figure>
+    </section>
 
-	<section class="slide">
-		<h2>All kind of lists</h2>
-		<ol>
-			<li>Simple lists are marked with bullets</li>
-			<li>Ordered lists begin with a number</li>
-			<li>You can even nest lists one inside another
-				<ul>
-					<li>Or mix their types</li>
-					<li>But do not go too far</li>
-					<li>Otherwise audience will be bored</li>
-				</ul>
-			</li>
-			<li>Look, seven rows exactly!</li>
-		</ol>
-	</section>
+    <section class="slide">
+      <figure>
+	<img class="cover" src="pictures/reece.jpg" alt="Piensa">
+	<figcaption class="white">
+	  <a href="http://rudygodoy.com/">© Rudy Godoy</a>
+	</figcaption>
+      </figure>
+    </section>
 
-	<section class="slide">
-		<h2>Serious citations</h2>
-		<figure>
-			<blockquote>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.</p>
-			</blockquote>
-			<figcaption>Marcus Tullius Cicero</figcaption>
-		</figure>
-	</section>
+    <section class="slide">
+      <h2 class="shout shrink">Historias de guerra</h2>
+    </section>
 
-	<section class="slide">
-		<h2>Code samples</h2>
-		<pre>
-			<code>&lt;!DOCTYPE html&gt;</code>
-			<code class="mark">&lt;html lang="en"&gt;</code>
-			<code><mark>&lt;head&gt;</mark> <span class="comment">&lt;!--Comment--&gt;</span></code>
-			<code>    &lt;title&gt;Shower&lt;/title&gt;</code>
-			<code>    &lt;meta charset="<mark class="important">UTF-8</mark>"&gt;</code>
-			<code>    &lt;link rel="stylesheet" href="screen.css"&gt;</code>
-			<code><mark>&lt;/head&gt;</mark></code>
-		</pre>
-	</section>
+    <section class="slide">
+      <h2>DAO</h2>
+      <p>17 de junio 2016. <a href="
+                 https://blog.ethereum.org/2016/06/17/critical-update-re-dao-vulnerability/">Incidente</a>
+        más importante en Ethereum. 
+      </p>
+      <p>
+        Aprovecha vulnerabilidad de llamada recursiva. Utiliza
+        funcionalidad de votación propia de la DAO para forzar
+        creación de DAOs hijos
+        (<code><a href="https://github.com/slockit/DAO/wiki/How-to-split-the-DAO">splitDAO()</a></code>)
+        que, además, obtengan beneficios y fondos del padre y que
+        repitan el proceso.
+      </p>
+      <p class="note">Resultado: Bifurcación de block chain: ETC y ETH.</p>
+    </section>
 
-	<section class="slide">
-		<h2>Even tables</h2>
-		<table>
-		<tr>
-			<th scope="col">Locavore</th>
-			<th>Umami</th>
-			<th>Helvetica</th>
-			<th>Vegan</th>
-		</tr>
-		<tr>
-			<th scope="row">Fingerstache</th>
-			<td>Kale</td>
-			<td>Chips</td>
-			<td>Keytar</td>
-		</tr>
-		<tr>
-			<th scope="row">Sriracha</th>
-			<td>Gluten-free</td>
-			<td>Ennui</td>
-			<td>Keffiyeh</td>
-		</tr>
-		<tr>
-			<th scope="row">Thundercats</th>
-			<td>Jean</td>
-			<td>Shorts</td>
-			<td>Biodiesel</td>
-		</tr>
-		<tr>
-			<th scope="row">Terry</th>
-			<td>Richardson</td>
-			<td>Swag</td>
-			<td>Blog</td>
-		</tr>
-		</table>
-		<p>It’s good to have information organized.</p>
-	</section>
+    <section class="slide">
+      <h2>Parity: billetera de firmas múltiples I</h2>
+      <p>19 de julio 2017. <a href="https://paritytech.io/blog/the-multi-sig-hack-a-postmortem.html">Código auditado</a> por 
+        la Fundación Ethereum.
+      </p>
+      <ol>
+        <li>Código vulnerable
+          identificado en <code>initWallet()</code>. <a href="https://etherscan.io/address/0xb3764761e297d6f121e79c32a65829cd1ddb4d32">Identifica</a>
+          programas en la red que lo usan.
+        </li>
+        <li>Ejecuta ataque en dos transacciones:</li>
+        <ol>
+          <li>tx 1: <code>initWallet()</code> para hacerse de la propiedad del programa/contrato</li>
+          <li>tx 2: transfiere fondos hacia otra cuenta</li>
+        </ol>
+      </ol>
+    </section>
 
-	<section class="slide" id="picture">
-		<h2>Pictures</h2>
-		<figure>
-			<img class="cover" src="pictures/picture.jpg" alt="Orange typewriter on a wooden table close-up">
-			<figcaption class="white">
-				<a href="http://fiftyfootshadows.net/">© John Carey</a>
-			</figcaption>
-		</figure>
-		<style>
-			#picture h2 {
-				color:#FFF;
-				}
-		</style>
-	</section>
+    <section class="slide">
+      <h2>Parity: billetera de firmas múltiples I</h2>
+      <pre>
+        <code>function initWallet (address[] _owners, uint _required,
+        uint _daylimit) <mark class="important">&nbsp;</mark>{</code>
+        <code>&nbsp;&nbsp;initMultiOwned(_owners, _required);</code>
+        <code>&nbsp;&nbsp;initDayLimit(_daylimit);</code>
+        <code>}</code>
+      </pre>
+      <p class="note">
+        Fondos robados: 150,000 ETH, cerca de USD 30MM. Recuperado
+        buena parte usando mismo ataque.
+      </p>
+    </section>
 
-	<section class="slide">
-		<h2 class="shout shrink">You can even shout this way</h2>
-	</section>
+    <section class="slide">
+      <h2>Parity: billetera de firmas múltiples I</h2>
+      <pre>
+        <code>function() payable {</code>
+        <code> // just being sent some cash?</code>
+        <code>&nbsp;&nbsp;if (msg.value > 0)</code>
+        <code>&nbsp;&nbsp;&nbsp;&nbsp;Deposit(msg.sender, msg.value);</code>
+        <code>&nbsp;&nbsp;else if (msg.data.length > 0)</code>
+        <code>&nbsp;&nbsp;&nbsp;&nbsp;<mark class="important">_walletLibrary.delegatecall(msg.data);</mark></code>
+        <code>}</code>
+    </section>
 
-	<section class="slide">
-		<h2>Inner navigation</h2>
-		<ol>
-			<li>Lets you reveal list items one by one</li>
-			<li class="next">To keep some key points</li>
-			<li class="next">In secret from audience</li>
-			<li class="next">But it will work only once</li>
-			<li class="next">Nobody wants to see the same joke twice</li>
-		</ol>
-	</section>
+    <section class="slide">
+      <h2>Parity: billetera de firmas múltiples II</h2>
+      <figure>
+	<blockquote>
+          <p>
+            Hello, first of all i'm not the owner of that contract. <mark>I was able to make myself the owner of that contract because its uninitialized</mark>.
+            <a href="https://pastebin.com/ejakDR1f">These</a> multi_sig wallets
+            deployed using Parity were using the library located at
+            "<a href="https://etherscan.io/address/0x863df6bfa4469f3ead0be8f9f2aae51c91a907b4">0x863df6bfa4469f3ead0be8f9f2aae51c91a907b4</a>"
+            address. I made myself the owner of "0x863df6bfa4469f3ead0be8f9f2aae51c91a907b4" contract and killed it and <mark>now when i query the dependent contracts "isowner(&lt;any_addr&gt;)" they all return TRUE because the delegate call made to a died contract</mark>.
+              I believe some one might exploit.            
+          </p>
+        </blockquote>
+        </figure>
 
-	<section class="slide grid">
-		<h2>All nicely aligned to grid</h2>
-	</section>
+    </section>
+    
+    <section class="slide">
+      <h2>Parity: billetera de firmas múltiples II</h2>
+      <p>
+        7 de noviembre
+        2017. Código de
+        biblioteca Parity <a href="https://paritytech.io/blog/security-alert.html">convertido</a>
+        a billetera de firmas múltiples. 
+      </p>
+      <ol>
+        <li>Código vulnerable
+          en versión publicada el <mark>20 de julio 2017</mark></li>
+        <li>Cualquier persona puede <a href="https://github.com/paritytech/parity/issues/6995">apropiarse</a> y <a href="https://etherscan.io/address/0x863df6bfa4469f3ead0be8f9f2aae51c91a907b4#code">destruir</a>
+          programa.</li>
+        <li>Ataque similar a anterior:</li>
+        <ol>
+          <li>tx 1: Invoca a <code>initWallet()</code> para hacerse de
+          la propiedad de biblioteca</li>
+          <li>tx 2: Invoca <code>selfdestruct()</code> para destruirla</li>
+        </ol>
+      </ol>
+    </section>
 
-	<section class="slide" id="see-more">
-		<h2 class="shout">
-			<img src="pictures/logo.svg" alt="Shower logo">
-			<a href="https://github.com/shower/shower">See more on GitHub</a>
-		</h2>
-		<style>
-			#see-more h2 {
-				font-size:100px
-				}
-			#see-more img {
-				width:0.72em;
-				height:0.72em;
-				}
-		</style>
-	</section>
+    <section class="slide">
+      <h2>Parity: billetera de firmas múltiples II</h2>
+      <pre>
+        <code>function initWallet(address[] _owners, uint _required,
+        uint _daylimit) <mark class="important">only_uninitialized</mark> {</code>
+        <code>&nbsp;&nbsp;initDaylimit(_daylimit);</code>
+        <code>&nbsp;&nbsp;initMultiowned(_owners, _required);</code>
+        <code>}</code>
+      </pre>
+      <p class="note">
+        Resultado: Cerca a 500 mil ETH inamovibles en
+        billeteras dependientes de biblioteca (Ejm. Polkadot).
+      </p>
+    </section>
 
-	<footer class="badge">
-		<a href="https://github.com/shower/shower">Fork me on GitHub</a>
-	</footer>
+    <section class="slide">
+      <h2>extraData : Consensys HumanStandardToken</h2>
+      <p>
+        31 de marzo 2017.
+      </p>
+      <p>
+        Invocación de llamada bajo nivel con un
+        arreglo de bytes como parámetro no intepreta correctamente de
+        acuerdo a definición del ABI, solo lo añade al resto de la cadena.
+      </p>
+      <p class="note">
+        Informe del
+        problema: <a href="https://github.com/ConsenSys/Tokens/pull/45">https://github.com/ConsenSys/Tokens/pull/45</a>
+        <mark>Todavía no resuelto</mark>.
+      </p>
+    </section>
 
-	<div class="progress"></div>
+    <section class="slide">
+      <h2>Ganador de USCC: Kings of Rountable</h2>
+      <ul>
+        <li>Explota el hecho de que el tamaño de los parámetros del
+          ABI se pueden definir arbitrariamente.</li>
+        <li>Contrato
+        aparentemente <a href="https://github.com/Arachnid/uscc/blob/master/submissions-2017/martinswende/Roundtable.sol#L77">valida
+            correctamente</a> los casos.</li>
+        <li>Ataque aparentemente efectúa llamadas válidas, salvo que
+        envía llamadas cofidicadas en hexadecimal a método vulnerable. </li>
+      </ul>
+      <p class="note">Web: <a href="https://github.com/Arachnid/uscc/blob/master/submissions-2017/martinswende/">https://github.com/Arachnid/uscc/blob/master/submissions-2017/martinswende/</a></p>
+    </section>
 
-	<script src="shower/shower.min.js"></script>
-	<!-- Copyright © 2017 Yours Truly, Famous Inc. -->
+    <section class="slide">
+      <figure>
+	<img class="cover" src="pictures/uscc-roundtable.png"
+             alt="USCC Roundtable">
+	<figcaption class="white">
+	  <a href="http://rudygodoy.com/">© Rudy Godoy</a>
+	</figcaption>
+      </figure>
+    </section>
 
-</body>
+    <section class="slide">
+      <figure>
+	<img class="cover" src="pictures/reece.jpg" alt="Piensa">
+	<figcaption class="white">
+	  <a href="http://rudygodoy.com/">© Rudy Godoy</a>
+	</figcaption>
+      </figure>
+    </section>
+
+    <section class="slide">
+      <h2 class="shout shrink">OpenZeppelin</h2>      
+    </section>
+
+    <section class="slide">
+      <h2>OpenZeppelin</h2>
+      <p>Biblioteca de contratos reutilizables y seguros en Solidity.</p>
+      <p>
+        <code>npm install zeppelin-solidity</code>,
+      </p>
+      <p>
+        <code>yarn add zeppelin-solidity</code> o
+      </p>
+      <p>
+        <code>git submodule add
+          https://github.com/OpenZeppelin/zeppelin-solidity</code>
+      </p>
+      <p class="note">Web: <a href="https://openzeppelin.org">openzeppelin.org</a></p>
+    </section>
+
+    <section class="slide">
+      <h2>OpenZeppelin: Tokens</h2>
+      <pre>
+        <code>pragma solidity ^0.4.11;</code>
+        <code><mark>import 'zeppelin-solidity/contracts/token/ERC20Basic.sol';</mark></code>
+        <code><mark>import 'zeppelin-solidity/contracts/math/SafeMath.sol';</mark></code>
+        <code>contract WhitelistToken <mark>is ERC20Basic</mark> {</code>
+        <code>&nbsp;&nbsp;<mark>using SafeMath for uint256;</mark></code>
+        <code>&nbsp;&nbsp;mapping(address => uint256) balances;</code>
+        <code>&nbsp;&nbsp;mapping(address => bool) whitelist;</code>
+      </pre>
+      <p class="note">
+        📜 <a href="https://github.com/OpenZeppelin/zeppelin-solidity/blob/master/contracts/token/ERC20Basic.sol">ERC20Basic.sol</a>
+      </p>
+    </section>
+
+    <section class="slide">
+      <h2>OpenZeppelin: BurnableToken</h2>
+      <pre>
+        <code>pragma solidity ^0.4.13;</code>
+        <code>import 'zeppelin-solidity/contracts/token/BurnableToken.sol';</code>
+        <code>contract LimToken is BurnableToken {</code>
+        <code>function LimToken(address initialAccount, uint initialBalance) {</code>
+        <code>&nbsp;&nbsp;balances[initialAccount] = initialBalance;</code>
+        <code>&nbsp;&nbsp;totalSupply = initialBalance;</code>
+        <code>&nbsp;&nbsp;}</code>
+      </pre>
+      <p class="note">
+        📜 <a href="https://github.com/OpenZeppelin/zeppelin-solidity/blob/master/contracts/token/BurnableToken.sol">BurnableToken.sol</a>
+      </p>
+    </section>
+
+    <section class="slide">
+      <h2>OpenZeppelin: Hagamos una ICO</h2>
+      <pre>
+        <code>import 'zeppelin-solidity/contracts/crowdsale/CappedCrowdsale.sol';</code>
+        <code>contract LimaICO is CappedCrowdsale {</code>
+        <code>&nbsp;&nbsp;function LimaICO ( uint256 _startTime, uint256 _endTime, uint256 _rate,
+  address _wallet, uint256 _cap )</code>
+    <code>&nbsp;&nbsp;Crowdsale(_startTime, _endTime, _rate, _wallet)</code>
+    <code>&nbsp;&nbsp;CappedCrowdsale(_cap) { }</code>
+    <code>}</code>
+      </pre>
+     <p class="note">
+        📜 <a href="https://github.com/OpenZeppelin/zeppelin-solidity/blob/master/contracts/crowdsale/CappedCrowdsale.sol">CappedCrowdsale.sol</a>
+      </p>
+     </section>
+        
+    <section class="slide">
+      <h2>OpenZeppelin:  ¿Porqué usarlo?</h2>
+      <ul>
+        <li>Emplea mejores prácticas y estándares de una industria en
+          maduración</li>
+        <li>Comunidad de colaboradores con proyectos ya funcionando
+        (tesnet o mainnet)</li>
+        <li>Enfoque modular: De lo simple a lo complejo</li>
+        <li>Software de código abierto con licencia MIT</li>
+        <li>Proyectos que lo usan: Aragon, Civic, Augur, Tierion</li>        
+      </ul>
+      <p class="note">
+        Documentación: <a href="http://zeppelin-solidity.readthedocs.io/en/latest/">http://zeppelin-solidity.readthedocs.io/en/latest/</a>
+      </p>
+    </section>
+
+    <section class="slide">
+      <figure>
+	<img class="cover" src="pictures/reece.jpg" alt="Piensa">
+	<figcaption class="white">
+	  <a href="http://rudygodoy.com/">© Rudy Godoy</a>
+	</figcaption>
+      </figure>
+    </section>
+
+    <section class="slide" id="see-more">
+      <h2 class="shout">
+        Muchas gracias
+	<a href="https://github.com/rudygodoy">
+          github.com/rudygodoy
+        </a>
+      </h2>
+      <style>
+	#see-more h2 {
+	font-size:80px
+	}
+	#see-more img {
+	width:0.72em;
+	height:0.72em;
+	}
+      </style>
+    </section>
+
+    <footer class="badge">
+      <a href="https://github.com/OpenZeppelin/zeppelin-solidity">Colabora</a>
+    </footer>
+
+    <div class="progress"></div>
+
+    <script src="shower/shower.min.js"></script>
+    <!-- Copyright © 2017 Rudy Godoy, v.bz. -->
+
+  </body>
 </html>
